@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\epslk\\Documents\\Unreal Projects\\teamgame\\Source\\teamgame\\teamgame.Build.cs",
+		"C:\\Users\\epslk\\Documents\\Unreal Projects\\teamgame\\Source\\teamgame.Target.cs",
+		"C:\\Users\\epslk\\Documents\\Unreal Projects\\teamgame\\Source\\teamgameEditor.Target.cs"
+	],
+	"EngineVersion": "4.27.2"
+}

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\teamgame.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{68B8B5D1-8B0E-4BFD-962D-44F5264DACDF}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\teamgame.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\teamgameEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{5B3BA4CA-E18C-47C5-BD52-882A917DF6DB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\teamgame">
+      <UniqueIdentifier>{A67628DA-B791-42AD-BC34-C62F4E5B7DD4}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\teamgame\teamgame.Build.cs">
+      <Filter>Source\teamgame</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\teamgame\teamgame.cpp">
+      <Filter>Source\teamgame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\teamgame\teamgame.h">
+      <Filter>Source\teamgame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\teamgame\teamgameCharacter.cpp">
+      <Filter>Source\teamgame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\teamgame\teamgameCharacter.h">
+      <Filter>Source\teamgame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\teamgame\teamgameGameMode.cpp">
+      <Filter>Source\teamgame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\teamgame\teamgameGameMode.h">
+      <Filter>Source\teamgame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\teamgame\teamgamePlayerController.cpp">
+      <Filter>Source\teamgame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\teamgame\teamgamePlayerController.h">
+      <Filter>Source\teamgame</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

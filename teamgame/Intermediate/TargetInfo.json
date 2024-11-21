@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "teamgame",
+			"Path": "C:\\Users\\epslk\\Documents\\Unreal Projects\\teamgame\\Source\\teamgame.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "teamgameEditor",
+			"Path": "C:\\Users\\epslk\\Documents\\Unreal Projects\\teamgame\\Source\\teamgameEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
