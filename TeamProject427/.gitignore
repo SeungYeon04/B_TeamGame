@@ -1,0 +1,49 @@
+# 프로젝트 파일
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# 빌드된 파일
+*.VC.db
+*.VC.opendb
+*.sdf
+*.suo
+*.user
+*.sln
+*.xcodeproj
+
+# 로그 파일
+*.log
+*.dump
+
+# 백업 및 임시 파일
+*.tmp
+*.bak
+*.swp
+
+# 언리얼 엔진에서 생성되는 추가 파일
+*.pdb
+*.obj
+*.idb
+*.pch
+*.aps
+*.res
+*.ilk
+*.exp
+
+# MacOS 관련
+.DS_Store
+
+# Visual Studio Code 관련
+.vscode/
+
+# 언리얼 플러그인
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+
+# 언리얼 런처 캐시
+.ue4dependencies
+
+# 빌드 결과물
+Build/
