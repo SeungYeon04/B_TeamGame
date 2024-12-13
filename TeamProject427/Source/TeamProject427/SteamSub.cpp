@@ -18,48 +18,21 @@ void ASteamSub::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	IOnlineSubsystem* OnlineSubsystem = IOnlineSubsystem::Get();
-	if (OnlineSubsystem)
-	{
-		OnlineSubsystem->GetSessionInterface();
+    // 스팀 서브시스템 확인
+    IOnlineSubsystem* OnlineSubsystem = IOnlineSubsystem::Get();
+    if (OnlineSubsystem)
+    {
+        FString SubsystemName = OnlineSubsystem->GetSubsystemName().ToString();
 
-		if (GEngine)
-		{
-			GetWorld()->SpawnActor<ASteamSub>();
-			GEngine->bEnableOnScreenDebugMessages = true;
-			GEngine->AddOnScreenDebugMessage(
-				-1,
-				15.f,
-				FColor::Blue,
-				FString::Printf(TEXT("Found Subsystem %s"), *OnlineSubsystem->GetSubsystemName().ToString())
-			);
-		}
-		else if (GEngine)
-		{
-			GEngine->bEnableOnScreenDebugMessages = true;
-			GEngine->AddOnScreenDebugMessage(
-				-1,
-				15.f,
-				FColor::Red,
-				TEXT("Session Interface is not valid!")
-			);
-		}
-	}
-	else if (GEngine)
-	{
-		GEngine->bEnableOnScreenDebugMessages = true;
-		GEngine->AddOnScreenDebugMessage(
-			-1,
-			15.f,
-			FColor::Red,
-			TEXT("No Online Subsystem found!")
-		);
-	}
-	else if (!GEngine)
-	{
-		UE_LOG(LogTemp, Error, TEXT("GEngine is NULL!"));
-		return;
-	}
+        if (OnlineSubsystem)
+        {
+            OnlineSubsystem->GetSessionInterface();
+        }
+        else
+        {
+            UE_LOG(LogTemp, Error, TEXT("No Online Subsystem found!"));
+        }
+    }
 }
 
 // Called every frame
