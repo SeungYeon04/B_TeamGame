@@ -18,9 +18,17 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	virtual void Tick(float DeltaTime) override;
+    virtual void Tick(float DeltaTime) override;
+
+    void ConnectToServer(); // 서버 연결 함수
+    void SendP2PMessage(const char* Message); // P2P 메시지 전송
+    void SendP2PMessage(const FString& Message);
+    void ReceiveP2PMessage(); // P2P 메시지 수신
 
 private:
-	// Steam API 초기화 함수
-	bool InitializeSteamAPI();
+    bool InitializeSteamAPI(); // Steam API 초기화
+    void InitializeSocket(); // 소켓 초기화
+
+    HSteamNetConnection Connection;
+    HSteamListenSocket ListenSocket;
 };
