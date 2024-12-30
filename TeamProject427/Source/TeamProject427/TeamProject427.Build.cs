@@ -14,6 +14,19 @@ public class TeamProject427 : ModuleRules
         // Steamworks SDK 절대경로
         string SteamworksPath = "C:/Program Files/Epic Games/UE_4.27/Engine/Source/ThirdParty/Steamworks/Steamv151";
 
+        // C 드라이브에 경로가 없으면 D 드라이브를 사용
+        if (!Directory.Exists(SteamworksPath))
+        {
+            SteamworksPath = "D:/Program Files/Epic Games/UE_4.27/Engine/Source/ThirdParty/Steamworks/Steamv151";
+
+            // D 드라이브에도 경로가 없으면 E 드라이브 확인
+            if (!Directory.Exists(SteamworksPath))
+            {
+                SteamworksPath = "E:/Program Files/Epic Games/UE_4.27/Engine/Source/ThirdParty/Steamworks/Steamv151"; 
+            }
+        }
+       
+
         PublicIncludePaths.Add(Path.Combine(SteamworksPath, "sdk/public"));
         PublicIncludePaths.Add(Path.Combine(SteamworksPath, "sdk/public/steam"));
 
