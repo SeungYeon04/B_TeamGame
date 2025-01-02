@@ -153,6 +153,41 @@ void ASteamSocketsTest::ReceiveP2PMessage()
     }
 }
 
+
+void ASteamSocketsTest::StartP2P()
+{
+    ISteamNetworkingSockets* SteamNetworking = SteamNetworkingSockets();
+    if (!SteamNetworking)
+    {
+        UE_LOG(LogTemp, Error, TEXT("Steam Networking Sockets 초기화 실패."));
+        return;
+    }
+
+    if (ListenSocket == k_HSteamListenSocket_Invalid)
+    {
+        UE_LOG(LogTemp, Log, TEXT("노드가 리슨 소켓을 엽니다."));
+        InitializeSocket();
+    }
+    else
+    {
+        UE_LOG(LogTemp, Log, TEXT("노드가 다른 피어에 연결합니다."));
+        SteamNetworkingIPAddr PeerAddress;
+        PeerAddress.Clear();
+        PeerAddress.SetIPv4(0x7F000001, 12345); // 127.0.0.1:12345
+
+        Connection = SteamNetworking->ConnectByIPAddress(PeerAddress, 0, nullptr);
+        if (Connection != k_HSteamNetConnection_Invalid)
+        {
+            UE_LOG(LogTemp, Log, TEXT("다른 노드에 연결 성공."));
+            Peers.Add(Connection);
+        }
+        else
+        {
+            UE_LOG(LogTemp, Error, TEXT("다른 노드에 연결 실패."));
+        }
+    }
+}
+
 // 매 프레임 호출
 void ASteamSocketsTest::Tick(float DeltaTime)
 {
