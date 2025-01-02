@@ -19,6 +19,27 @@ void ASteamSocketsTest::BeginPlay()
 {
     Super::BeginPlay();
 
+    UE_LOG(LogTemp, Log, TEXT("StartP2P 함수가 호출되었습니다."));
+
+    UWorld* World = GetWorld();
+    if (World)
+    {
+        AActor* Actor = World->SpawnActor<ASteamSocketsTest>();
+        if (Actor)
+        {
+            UE_LOG(LogTemp, Log, TEXT("ASteamSocketsTest has been spawned!"));
+        }
+        else
+        {
+            UE_LOG(LogTemp, Error, TEXT("Failed to spawn ASteamSocketsTest."));
+        }
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("World is NULL! Cannot spawn ASteamSocketsTest."));
+    }
+
+
     if (InitializeSteamAPI())
     {
         UE_LOG(LogTemp, Log, TEXT("Steam API 초기화 성공."));
@@ -30,6 +51,8 @@ void ASteamSocketsTest::BeginPlay()
     {
         UE_LOG(LogTemp, Error, TEXT("Steam API 초기화 실패."));
     }
+
+   
 }
 
 // Steam API 초기화
