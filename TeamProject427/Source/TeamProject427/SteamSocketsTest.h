@@ -39,6 +39,6 @@ public:
 
     // 매칭 시작 함수 (버튼으로 호출)
     UFUNCTION(BlueprintCallable, Category = "Networking")
-    void StartP2P(); // 매칭 시작
+    void StartP2P(); // 매칭 시작UFUNCTION(BlueprintCallable, Category = "Networking")
 
 };
