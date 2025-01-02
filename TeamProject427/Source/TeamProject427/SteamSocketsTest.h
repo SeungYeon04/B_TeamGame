@@ -29,6 +29,16 @@ private:
     bool InitializeSteamAPI(); // Steam API 초기화
     void InitializeSocket(); // 소켓 초기화
 
-    HSteamNetConnection Connection;
-    HSteamListenSocket ListenSocket;
+    HSteamNetConnection Connection;       // P2P 연결
+    HSteamListenSocket ListenSocket;      // P2P 리슨 소켓
+    TArray<HSteamNetConnection> Peers;    // 연결된 피어들
+
+    FString NodeIdentifier;               // 노드 식별자
+
+public:
+
+    // 매칭 시작 함수 (버튼으로 호출)
+    UFUNCTION(BlueprintCallable, Category = "Networking")
+    void StartP2P(); // 매칭 시작UFUNCTION(BlueprintCallable, Category = "Networking")
+
 };
